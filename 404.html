@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+  <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>无法找到这个文件</title>
+    <!--link rel="stylesheet" href="../netError.css" type="text/css" media="all" /-->
+	<style type="text/css">
+	
+	html {	    
+	background-attachment: fixed;
+	background-image: url("/404.jpg");/*这里可以设置图片*/
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover !important;
+  font-size: 10pt;
+  margin: 50px 40px 20px 40px;
+  text-align: center;
+}
+
+@media (max-width: 640px), (max-height: 640px) {
+  html {
+    margin: 13px 16px 16px 16px;
+  }
+}
+
+body {
+  margin: auto;
+  max-width: 540px;
+  min-width: 200px;
+}
+
+ul, ol {
+  margin: 0;
+  -moz-margin-start: 40px;
+  padding: 0;
+  color: #777;
+}
+
+#errorPageContainer {
+  margin: auto;
+  padding-bottom: 20px;
+  max-width: 540px;
+  min-width: 200px;
+  border: 0px solid #AAA;
+  color: #444;
+  background-color: rgba(255,255,255,.6);
+  border: 1px solid #AAA;
+  border-bottom: 1px solid #888;
+  border-radius: 3px;
+  box-shadow: 0px 2px 2px #AAA;
+}
+
+#errorPageContainer #errorTitleText {
+  color: #666;
+  margin: 0;
+  padding-top: 69px;
+  padding-bottom: 25px;
+  font-weight: normal;
+  font-size: 1.5em;
+  border-bottom: 1px solid #EEE;
+  border-radius: 3px 3px 0 0;
+  background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAQAAAD9sOO8AAAASUlEQVR4Xu3SMQoAIAzFUO/o/c+iY4fSSfgQyesgOESHrs9I0j7TEOL9pk5i/OmB/s9IvAYQH6DjxmtTWPEWBcS52zJPIJ4lSRfUZeB1c/cgSwAAAABJRU5ErkJggg==') no-repeat;
+  background-color: rgba(255,255,255,.7);
+  background-position: center 20px;
+}
+
+#errorLongContent {
+  padding: 0 24px 24px;
+  text-align: start;
+}
+
+#errorShortDesc > p {
+  white-space: pre-wrap;
+}
+
+button {
+  -moz-appearance: none;
+  background-image: linear-gradient(#ededed, #ededed 38%, #dedede);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #444;
+  text-shadow: 0 1px 0 rgb(240, 240, 240);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  margin: 0px 5px;
+  min-height: 29px;
+  min-width: 60px;
+  -moz-padding-start: 9px;
+  -moz-padding-end: 8px;
+  font-family: 'Segoe UI', Arial, 'Microsoft Yahei', Simsun, sans-serif;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 14;
+}
+
+button:hover {
+  background-image: linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+button:active {
+  background-image: linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #444;
+  box-shadow: none;
+}
+
+#getMeOutButton,
+#errorTryAgain {
+  background-image: linear-gradient(#5d9aff, #5d9aff 38%, #5891f0);
+  border: 1px solid rgba(45, 102, 195, 1);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#getMeOutButton:hover,
+#errorTryAgain:hover {
+  background-image: linear-gradient(#659efd, #659efd 38%, #6097f1);
+  border: 1px solid rgba(45, 102, 195, 1);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#getMeOutButton:active,
+#errorTryAgain:active {
+  background-image: linear-gradient(#6095ed, #6095ed 38%, #6095ed);
+  border: 1px solid rgba(38, 84, 160, 1);
+  color: #fff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#errorContainer {
+  display: none;
+}
+
+#securityOverrideDiv {
+  padding-top: 10px;
+}
+
+#securityOverrideContent {
+  background-color: InfoBackground;
+  color: InfoText;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Custom styling for 'blacklist' error class */
+
+:root.blacklist #errorPageContainer {
+  border-radius: 5px;
+  margin-top: -10px;
+  max-width: 778px;
+  min-width: 718px;
+  background-image: url(iconsd/malware_icon_v2.png);
+  background-position: right 30px top 100px;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+:root.blacklist {
+  background: url(iconsd/stripe.png) rgb(140, 0, 0);
+  background-attachment:fixed;
+  margin: 50px 10px 20px 10px !important;
+}
+
+@media (max-width: 640px), (max-height: 640px) {
+  :root.blacklist {
+    margin: 50px 10px 20px 10px !important;
+  }
+}
+
+.blacklist > body {
+  margin: auto !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+:root.blacklist[dir="rtl"] #errorPageContainer {
+  background-position: left bottom, left top;
+}
+
+:root.blacklist #errorTitle {
+  background-image: none !important;
+}
+
+:root.blacklist #errorTryAgain {
+  display: none;
+}
+
+:root.blacklist #errorLongContent {
+  -moz-padding-end: 220px;
+}
+
+#ignoreWarning {
+  padding: 6px 32px !important;
+}
+
+#ignoreWarningButton {
+  border: none !important;
+  color: #0000FF !important;
+  box-shadow: none !important;
+}
+
+/* 853的CSS */
+body a:hover:active {
+  color: #10bae0;
+}
+
+body *:focus {
+  outline: 2px solid rgba(16,186,224,0.5) !important;
+  outline-offset: 1px !important;
+  -moz-outline-radius: 3px !important;
+}
+
+body a:focus {
+  outline-offset: 0px !important;
+}
+
+body button:focus,
+body input[type=reset]:focus, body input[type=button]:focus, body input[type=submit]:focus {
+  -moz-outline-radius: 5px !important;
+}
+
+body textarea:focus, body button:focus, body select:focus, body input:focus {
+  outline-offset: -1px !important;
+}
+	
+	</style>
+	
+    <link rel="icon" type="/image/png" id="favicon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAA5klEQVQokWP4z4AfEpAmVYGOrtFZ
+ows6FjgU6DA7nPV94/vG4ZoOO1YF5kk+b06tObXG9411PhYFejye94Jf/1f5rxLy2vORvgCGAvvG
+kNdhr0CssFehrxw60RQYyHg9T3gRAVYQ8SrhhfdLAzkUBc7zwl+lP4t8ZWVpZREJZEW8clmIpMBI
+3+dN4ovMZ3EvPN96vo0DshJfeL8x0ocrcNsV9TL9GUj4/8z/M0FK059FvXTbDlfg/zLleSZQQcxL
+EC/mJYid8tz/BVxBzfl0qAKXdy7vIArSntedRTgyDWQ0BkwhKrIA2UwP+cP33tMAAAAASUVORK5C
+YII=" />
+
+  </head>
+
+  <body dir="ltr">
+
+    <div id="errorPageContainer">
+    
+      <!-- Error Title -->
+      <div id="errorTitle">
+        <h1 id="errorTitleText">404 NOT FOUND</h1>
+      </div>
+      
+      <div id="errorLongContent">
+      
+        <div id="errorShortDesc">
+          <p id="errorShortDescText">853无法找到这个文件，有可能这个文件无法浏览或已经被删除了。</p>
+        </div>
+
+        <div id="errorLongDesc"><ul> <li>请检查该链接地址是否输入正确。</li><li>如果您无法载入任何页面，有可能是服务器正在抽风。</li><li>如果您确认有此网页，那么您可能无权访问该网页。请向853确认是否获得浏览权限。</li></ul></div>
+
+        
+      </div>
+
+	  <button id="errorTryAgain" autocomplete="off" onclick="javascript:history.back(1)">后退</button>
+	  <button onclick="window.open('http://tieba.baidu.com/i/135104420?fr=home')">853的i贴吧</button>
+
+
+    </div>
+
+  </body>
+</html><!--以上都可以更改-->
+<!--作者by消失的853，可以留这里吗？毕竟人家移植这个页面也做了很多更改>_<-->
